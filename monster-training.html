@@ -1,32 +1,31 @@
-<!-- Save as monster-training.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Monster Training</title>
+  <meta charset="UTF-8" />
+  <title>Monster Training Simulation</title>
   <style>
     body {
-      background-color: #000;
+      background-color: #222;
       color: #ccffcc;
-      font-family: 'Consolas', monospace;
+      font-family: 'Courier New', Courier, monospace;
       max-width: 700px;
       margin: 40px auto;
       padding: 20px;
       border-radius: 10px;
-      background-image: linear-gradient(to bottom, #003300, #000000);
+      box-shadow: 0 0 20px #33aa33;
     }
     h1, h2 {
       text-align: center;
-      color: #66ff66;
+      color: #99dd99;
     }
     pre {
-      background: #002200;
+      background: #113311;
       padding: 20px;
       border-radius: 10px;
       white-space: pre-wrap;
+      box-shadow: inset 0 0 10px #33aa3388;
       max-height: 400px;
       overflow-y: auto;
-      box-shadow: inset 0 0 10px #00ff0077;
     }
     nav {
       text-align: center;
@@ -37,40 +36,46 @@
       text-decoration: none;
       font-weight: bold;
     }
+    nav a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 
-<h1>🏋️‍♂️ Monster Training Grounds</h1>
-<h2>5-Day Strength Program</h2>
+<h1>🐉 Monster Training Simulation</h1>
+<h2>7-Day Training Log</h2>
 
-<pre id="trainingLog">Starting training...</pre>
+<pre id="trainingLog">Starting simulation...</pre>
 
 <nav>
-<a href="index.html">⬅️ Return to Lair</a>
+  <a href="index.html">⬅️ Return to Lair</a>
 </nav>
 
 <script>
   // --- Declarations ---
-  var strength = 8;
-  var speed = 4;
-  var log = "";
-  var day = 1;
+  var fireDragon = 4;
+  var iceTroll = 6;
+  var stoneGolem = 3;
 
-  // --- Loop: 5 Days ---
-  while (day <= 5) {
+  var day = 1;
+  var log = "";
+
+  // --- Looping: 7 days ---
+  while (day <= 7) {
     log += "Day " + day + ":\n";
 
     if (day % 2 === 0) {
-      strength += 1;
-      log += "  🛡️ Strength increased by 1!\n";
+      fireDragon += 1;
+      iceTroll += 1;
+      stoneGolem += 1;
+      log += "  🏋️ Training day: +1 Fire Dragon, +1 Ice Troll, +1 Stone Golem\n";
     } else {
-      speed += 1;
-      log += "  🌀 Speed increased by 1!\n";
+      log += "  💤 Rest day: No changes\n";
     }
 
-    log += "  Stats => Strength: " + strength + ", Speed: " + speed + "\n\n";
-    day = day + 1;
+    log += "  Totals => Fire Dragon: " + fireDragon + ", Ice Troll: " + iceTroll + ", Stone Golem: " + stoneGolem + "\n\n";
+    day++;
   }
 
   document.getElementById("trainingLog").textContent = log;
