@@ -1,0 +1,80 @@
+<!-- Save as monster-training.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monster Training</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #ccffcc;
+      font-family: 'Consolas', monospace;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 10px;
+      background-image: linear-gradient(to bottom, #003300, #000000);
+    }
+    h1, h2 {
+      text-align: center;
+      color: #66ff66;
+    }
+    pre {
+      background: #002200;
+      padding: 20px;
+      border-radius: 10px;
+      white-space: pre-wrap;
+      max-height: 400px;
+      overflow-y: auto;
+      box-shadow: inset 0 0 10px #00ff0077;
+    }
+    nav {
+      text-align: center;
+      margin-top: 30px;
+    }
+    nav a {
+      color: #aaffaa;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🏋️‍♂️ Monster Training Grounds</h1>
+<h2>5-Day Strength Program</h2>
+
+<pre id="trainingLog">Starting training...</pre>
+
+<nav>
+  <a href="monster-lair.html">⬅️ Return to Lair</a>
+</nav>
+
+<script>
+  // --- Declarations ---
+  var strength = 8;
+  var speed = 4;
+  var log = "";
+  var day = 1;
+
+  // --- Loop: 5 Days ---
+  while (day <= 5) {
+    log += "Day " + day + ":\n";
+
+    if (day % 2 === 0) {
+      strength += 1;
+      log += "  🛡️ Strength increased by 1!\n";
+    } else {
+      speed += 1;
+      log += "  🌀 Speed increased by 1!\n";
+    }
+
+    log += "  Stats => Strength: " + strength + ", Speed: " + speed + "\n\n";
+    day = day + 1;
+  }
+
+  document.getElementById("trainingLog").textContent = log;
+</script>
+
+</body>
+</html>

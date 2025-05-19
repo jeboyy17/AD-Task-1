@@ -1,0 +1,86 @@
+<!-- Save as monster-lair.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monster Lair</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fefefe;
+      font-family: 'Segoe UI', sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 20px;
+      border: 2px solid #444;
+      border-radius: 12px;
+      background-image: linear-gradient(to bottom, #222, #000);
+    }
+    h1, h2 {
+      text-align: center;
+      color: #ff4444;
+    }
+    .monster {
+      text-align: center;
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 12px;
+      background-color: #222;
+    }
+    .status {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #33ff99;
+      margin-top: 20px;
+    }
+    nav {
+      text-align: center;
+      margin-top: 30px;
+    }
+    nav a {
+      color: #ffdddd;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🐉 Monster Lair</h1>
+<h2>Welcome to the Dungeon</h2>
+
+<div class="monster">
+  <p><strong>Name:</strong> Flameclaw</p>
+  <p><strong>Strength:</strong> <span id="strength"></span></p>
+  <p><strong>Speed:</strong> <span id="speed"></span></p>
+  <div class="status" id="statusMsg"></div>
+</div>
+
+<nav>
+  <a href="monster-training.html">▶️ Begin Training</a>
+</nav>
+
+<script>
+  // --- Declarations ---
+  var strength = 8;
+  var speed = 4;
+
+  document.getElementById("strength").textContent = strength;
+  document.getElementById("speed").textContent = speed;
+
+  // --- Conditional Logic ---
+  var statusText = "";
+
+  if (strength >= 7 && speed >= 7) {
+    statusText = "🔥 Your monster is battle-ready!";
+  } else if (strength >= 5 || speed >= 5) {
+    statusText = "⚠️ Your monster needs more training.";
+  } else {
+    statusText = "💤 Your monster is weak and slow. Start training!";
+  }
+
+  document.getElementById("statusMsg").textContent = statusText;
+</script>
+
+</body>
+</html>
