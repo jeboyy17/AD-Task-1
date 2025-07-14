@@ -1,0 +1,16 @@
+{
+    "name": "aiden-auditore/ad-task-1",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "AidenAuditore\\AdTask1\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Aiden017",
+            "email": "kentc1322@gmail.com"
+        }
+    ],
+    "require": {}
+}
